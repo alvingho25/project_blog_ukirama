@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'static_pages#index'
+  get '/about', to: 'static_pages#about'
+  get '/sample_blog_post', to: 'static_pages#sample_blog_post'
+  get '/contact', to: 'static_pages#contact'
+  resources :users do
+    resources :blog_posts
+  end
 end

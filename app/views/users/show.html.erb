@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+<% provide(:image, "home-bg.jpg") %>
+
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <li>
+                <%= @user.name %>
+                <%= @user.email %>
+                <%= link_to "Edit", edit_user_path(@user) %>
+            </li>
+        </div>
+    </div>
+    </div>
+</article>
+
+<hr>
+

@@ -1,0 +1,32 @@
+<% provide(:title, 'New User') %>
+<% provide(:image, "home-bg.jpg") %>
+
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div>
+            <ul>
+            <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+            <% end %>
+            </ul>
+        </div>
+        <%= form_for @user do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+            
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control', placeholder: "example@example.com" %>
+            
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+    </div>
+    </div>
+</article>
+
+<hr>
+

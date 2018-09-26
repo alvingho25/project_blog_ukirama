@@ -1,0 +1,25 @@
+<% provide(:title, "All User") %>
+<% provide(:image, "home-bg.jpg") %>
+
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <%= link_to "New User", new_user_path %>
+            <h5> All User </h5>
+            <% @users.each do |user| %>
+                <li>
+                    <%= link_to user.name, user %>
+                    <%= link_to "Delete User", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+                </li>
+            <% end %>   
+        </div>
+    </div>
+    </div>
+</article>
+
+<hr>
+
