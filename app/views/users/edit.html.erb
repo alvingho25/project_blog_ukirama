@@ -14,15 +14,7 @@
             <% end %>
             </ul>
         </div>
-        <%= form_for @user do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'form-control' %>
-            
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'form-control', placeholder: "example@example.com" %>
-            
-            <%= f.submit "Submit", class: "btn btn-primary" %>
-        <% end %>
+        <%= render 'form' %>
         </div>
     </div>
     </div>

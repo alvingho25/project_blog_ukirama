@@ -1,2 +1,2 @@
 Feedback
-- pindahkan layouting ke level paling atas (folder layouts)
+- rapikan tampilan (show, index)

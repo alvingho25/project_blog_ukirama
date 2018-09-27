@@ -9,16 +9,27 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <%= link_to "New User", new_user_path, class: "btn btn-primary" %>
             <h5> All User </h5>
-            <% @users.each do |user| %>
-                <li>
-                    <%= link_to user.name, user, class: "btn btn-info" %>
-                    <%= link_to "Post", user_blog_posts_path(user), class: "btn btn-primary" %>
-                    <%= link_to "Delete User", user, method: :delete,
-                                data: { confirm: "You sure?" }, class: "btn btn-danger" %>
-                </li>
-            <% end %>
-
-            <%= will_paginate @users, class: "digg_pagination"   %>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-md-3"> Name </th>
+                        <th class="col-md-3"> Edit </th>
+                        <th class="col-md-3"> Post </th>
+                        <th class="col-md-3"> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <td class="col-md-3"><%= user.name %></td>
+                            <td class="col-md-3"><%= link_to "Show", user, class: "btn btn-info" %></td>
+                            <td class="col-md-3"><%= link_to "Post", user_blog_posts_path(user), class: "btn btn-primary" %></td>
+                            <td class="col-md-3"><%= link_to "Delete User", user, method: :delete,
+                                    data: { confirm: "You sure?" }, class: "btn btn-danger" %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>    
     </div>
 </article>
 

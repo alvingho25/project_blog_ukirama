@@ -7,13 +7,26 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <li>
-                <%= @user.name %>
-                <%= @user.email %>
-                <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-                <%= link_to "Post", user_blog_posts_path(@user), class: "btn btn-primary" %>
-                <%= link_to "Back", users_path(@user), class: "btn btn-danger" %>
-            </li>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-md-1"> Name </th>
+                        <th class="col-md-1"> Email </th>
+                        <th class="col-md-3"> Edit </th>
+                        <th class="col-md-3"> Post </th>
+                        <th class="col-md-3"> Back </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td class="col-md-1"><%= @user.name %></td>
+                            <td class="col-md-1"><%= @user.email %></td>
+                            <td class="col-md-3"><%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %></td>
+                            <td class="col-md-3"><%= link_to "Post", user_blog_posts_path(@user), class: "btn btn-primary" %></td>
+                            <td class="col-md-3"><%= link_to "Back", users_path(@user), class: "btn btn-danger" %></td>
+                        </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     </div>
