@@ -10,7 +10,9 @@
             <li>
                 <%= @user.name %>
                 <%= @user.email %>
-                <%= link_to "Edit", edit_user_path(@user) %>
+                <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+                <%= link_to "Post", user_blog_posts_path(@user), class: "btn btn-primary" %>
+                <%= link_to "Back", users_path(@user), class: "btn btn-danger" %>
             </li>
         </div>
     </div>

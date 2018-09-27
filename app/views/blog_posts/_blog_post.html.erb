@@ -1,0 +1,8 @@
+<% posts.each do |post| %>
+    <%= link_to show_posts_path(post), class: "nav-link" do %>
+        <h2 class="section-heading"><%= post.title %></h2>
+        <blockquote class="blockquote"><%= post.summary %></blockquote>
+        <p><%= post.content %></p>
+    <% end %>
+    <%= link_to "Posted By " + post.user.name, user_blog_posts_path(post.user), class: "nav-link" %>
+<% end %>

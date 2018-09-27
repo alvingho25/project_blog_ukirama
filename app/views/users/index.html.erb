@@ -7,17 +7,18 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <%= link_to "New User", new_user_path %>
+            <%= link_to "New User", new_user_path, class: "btn btn-primary" %>
             <h5> All User </h5>
             <% @users.each do |user| %>
                 <li>
-                    <%= link_to user.name, user %>
+                    <%= link_to user.name, user, class: "btn btn-info" %>
+                    <%= link_to "Post", user_blog_posts_path(user), class: "btn btn-primary" %>
                     <%= link_to "Delete User", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+                                data: { confirm: "You sure?" }, class: "btn btn-danger" %>
                 </li>
-            <% end %>   
-        </div>
-    </div>
+            <% end %>
+
+            <%= will_paginate @users, class: "digg_pagination"   %>
     </div>
 </article>
 

@@ -1,0 +1,25 @@
+<% provide(:title, @user.name + ' New  Post') %>
+<% provide(:image, "home-bg.jpg") %>
+
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <div>
+            <ul>
+            <% @post.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+            <% end %>
+            </ul>
+        </div>
+        <%= render 'form' %>
+        
+        </div>
+    </div>
+    </div>
+</article>
+
+<hr>
+
