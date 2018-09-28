@@ -1,0 +1,22 @@
+<% provide(:title, 'Login') %>
+<% provide(:image, "home-bg.jpg") %>
+
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <%= form_for :session do |f| %>
+                <%= f.label :email %>
+                <%= f.text_field :email, class: 'form-control' %>
+                
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
+                
+                <%= f.submit "Submit", class: "btn btn-primary", :style => 'margin-top: 14px' %>
+            <% end %>
+        </div>
+    </div>
+    </div>
+</article>

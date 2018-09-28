@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <%= link_to "Start bootstrap", root_path, class: "navbar-brand" %>
+    <%= link_to "Home", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fas fa-bars"></i>
@@ -9,20 +9,34 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Blog Post", blog_posts_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Blog Post", blog_posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "Contact", contact_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Users", users_path, class: "nav-link" %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to "User Profile", user_path(current_user), class: "nav-link" %>
+          </li>
+          <% if is_admin? %>
+            <li class="nav-item">
+              <%= link_to "All Users", users_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <%= link_to "Log Out", logout_path, class: "nav-link", method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log In", login_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -3,6 +3,15 @@
 
 <!-- Main Content -->
 <div class="container">
+
+    <div class="search-container">
+        <%= form_tag(recent_blog_path, method: :get, enforce_utf8: false) do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+            <%= button_tag(type: "submit", name: nil) do %>
+                <i class="fa fa-search"></i>
+            <% end %>
+        <% end %>
+    </div>
     <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
         <%= render partial: 'blog_posts/blog_post', locals: { posts: @posts} %>

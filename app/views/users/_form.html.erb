@@ -4,6 +4,21 @@
     
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control', placeholder: "example@example.com" %>
+
+    <% if is_admin? %>
+        <%= f.label :is_admin %>
+        <%= f.check_box :is_admin %>
+    <% end %>
+    <br>
+
+    <% if current_user == @user %>
+        <p> Fill this if you want to change your password </p>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <% end %>
     
     <%= f.submit "Submit", class: "btn btn-primary", :style => 'margin-top: 14px' %>
 <% end %>

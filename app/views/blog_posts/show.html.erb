@@ -7,14 +7,17 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        <%= link_to @user.name + " Post", user_blog_posts_path(@user), class: "btn btn-primary" %>
+            <%= link_to @post.user.name + " Post", user_blog_posts_path(@post.user), class: "btn btn-primary" %>
             <h2 class="section-heading"><%= @post.title %></h2>
             <blockquote class="blockquote"><%= @post.summary %></blockquote>
             <p><%= @post.content %></p>
-            <p><%= @post.user.name %></p>
+            <p><%= @post.user.name %></p>     
+            <%= link_to "Back", blog_posts_path, class: "btn btn-danger" %>
+            <% if current_user? @post.user %>
             <%= link_to "Edit Post", edit_user_blog_post_path(@post.user, @post), class: "btn btn-primary" %>
             <%= link_to "Delete Post", user_blog_post_path(@post.user, @post), method: :delete,
                                 data: { confirm: "You sure?" }, class: "btn btn-danger" %>          
+            <% end %>
         </div>
     </div>
     </div>

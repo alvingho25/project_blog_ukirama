@@ -7,19 +7,10 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-        <%= link_to "Create New Post", new_user_blog_post_path, class: "btn btn-primary" %>
-        <%= link_to "Users", users_path, class: "btn btn-primary" %>
-        <% @posts.each do |post| %>
-            <%= link_to user_blog_post_path(post.user, post), class: "nav-link" do %>
-                <h2 class="section-heading"><%= post.title %></h2>
-                <blockquote class="blockquote"><%= post.summary %></blockquote>
-                <p><%= post.content %></p>
-            <% end %>
-                <%= link_to "Posted By " + post.user.name, user_blog_posts_path(post.user), class: "nav-link" %>
-                <%= link_to "Edit Post", edit_user_blog_post_path(post.user, post), class: "btn btn-primary" %>
-                <%= link_to "Delete Post", user_blog_post_path(post.user, post), method: :delete,
-                                  data: { confirm: "You sure?" }, class: "btn btn-danger" %>
-        <% end %>           
+        <% if logged_in? %>
+            <%= link_to "Create New Post", new_user_blog_post_path(current_user), class: "btn btn-primary" %>
+        <% end %>
+        <%= render partial: 'blog_post', locals: { posts: @posts} %>          
         </div>
     </div>
     </div>

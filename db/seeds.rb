@@ -1,11 +1,14 @@
 User.create!(name:  "Alvin",
-             email: "alvin@alvin.com")
+             email: "alvin@alvin.com",
+             password: "password",
+             is_admin: true)
 
 9.times do |n|
 name  = "Alvin#{n+1}"
 email = "alvin-#{n+1}@alvin.com"
 User.create!(name:  name,
-            email: email)
+            email: email,
+            password: "password")
 end
 
 users = User.all

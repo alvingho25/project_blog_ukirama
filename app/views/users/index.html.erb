@@ -7,24 +7,23 @@
     <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <%= link_to "New User", new_user_path, class: "btn btn-primary" %>
             <h5> All User </h5>
-            <table>
+            <table class="table-bordered">
                 <thead>
-                    <tr>
-                        <th class="col-md-3"> Name </th>
-                        <th class="col-md-3"> Edit </th>
-                        <th class="col-md-3"> Post </th>
-                        <th class="col-md-3"> Delete </th>
+                    <tr class="d-flex">
+                        <th class="col-3"> Name </th>
+                        <th class="col-3"> Edit </th>
+                        <th class="col-3"> Post </th>
+                        <th class="col-3"> Delete </th>
                     </tr>
                 </thead>
                 <tbody>
                     <% @users.each do |user| %>
-                        <tr>
-                            <td class="col-md-3"><%= user.name %></td>
-                            <td class="col-md-3"><%= link_to "Show", user, class: "btn btn-info" %></td>
-                            <td class="col-md-3"><%= link_to "Post", user_blog_posts_path(user), class: "btn btn-primary" %></td>
-                            <td class="col-md-3"><%= link_to "Delete User", user, method: :delete,
+                        <tr class="d-flex">
+                            <td class="col-3"><%= user.name %></td>
+                            <td class="col-3"><%= link_to "Show", user, class: "btn btn-info" %></td>
+                            <td class="col-3"><%= link_to "Post", user_blog_posts_path(user), class: "btn btn-primary" %></td>
+                            <td class="col-3"><%= link_to "Delete User", user, method: :delete,
                                     data: { confirm: "You sure?" }, class: "btn btn-danger" %></td>
                         </tr>
                     <% end %>
