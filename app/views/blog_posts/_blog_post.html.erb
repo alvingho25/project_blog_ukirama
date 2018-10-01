@@ -6,6 +6,7 @@
             <p><%= post.content %></p>
         <% end %>
         <%= link_to "Posted By " + post.user.name, user_blog_posts_path(post.user), class: "nav-link" %>
+        <p> Tags : <%= post.tag_list %></p>
         <%= link_to "Edit Post", edit_user_blog_post_path(post.user, post), class: "btn btn-primary" %>
         <%= link_to "Delete Post", user_blog_post_path(post.user, post), method: :delete,
             data: { confirm: "You sure?" }, class: "btn btn-danger" %>
@@ -16,6 +17,7 @@
             <p><%= post.content %></p>
         <% end %>
         <%= link_to "Posted By " + post.user.name, user_blog_posts_path(post.user), class: "nav-link" %>
+        <p> Tags : <%= post.tag_list %></p>
     <% end %>
     
 <% end %>

@@ -21,6 +21,7 @@ gem 'font-awesome-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

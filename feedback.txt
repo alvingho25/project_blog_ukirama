@@ -1,2 +1,7 @@
 Feedback
-benerin bug akses users belum login
+- benerin bug akses users belum login
+- Start bootstrap dibuat jadi home
+- sebelah kanan => blog post, about, contact, sign_up, log_in
+- is_admin untuk user manapun bisa di edit, jika current user is_admin
+- bisa ganti password (khusus user yg skrg login saja, admin gabisa ganti password orang lain)
+-- dibuatnya ada field password, password_confirmation

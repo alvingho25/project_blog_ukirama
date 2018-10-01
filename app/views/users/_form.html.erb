@@ -6,8 +6,8 @@
     <%= f.email_field :email, class: 'form-control', placeholder: "example@example.com" %>
 
     <% if is_admin? %>
-        <%= f.label :is_admin %>
         <%= f.check_box :is_admin %>
+        <%= f.label :is_admin, "Admin??" %>
     <% end %>
     <br>
 
